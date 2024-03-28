@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<robot name="wheelchair" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="frontSupport_R_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_frontSupport_R">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="frontSupport_R_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="frontSupport_L_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_frontSupport_L">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="frontSupport_L_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="frontWheel_L_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_frontWheel_L">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="frontWheel_L_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+
+
+<transmission name="frontWheel_R_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_frontWheel_R">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="frontWheel_R_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="BackWheel_R_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_BackWheel_R">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="BackWheel_R_actr">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+<transmission name="BackWheel_L_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_BackWheel_L">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="BackWheel_L_actr">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

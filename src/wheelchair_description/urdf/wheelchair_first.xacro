@@ -1,0 +1,274 @@
+<?xml version="1.0" ?>
+<robot name="wheelchair" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find wheelchair_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find wheelchair_description)/urdf/wheelchair.trans" />
+<xacro:include filename="$(find wheelchair_description)/urdf/wheelchair.gazebo" />
+<link name="base_link" />
+
+
+<link name="seat_link">
+   <inertial>
+     <origin xyz="0 0 0.5" rpy="0 0 0"/>
+     <mass value="1"/>
+     <inertia ixx="0.025417"  ixy="0"  ixz="0" iyy="0.03021" iyz="0" izz="0.05521" />
+   </inertial>
+
+   <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+       <box size="0.6 0.55 0.05" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+
+   <collision>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <geometry>
+       
+       <box size="0.6 0.55 0.05" />
+     </geometry>
+    
+   </collision>
+ </link>
+
+
+
+
+<link name="base_footprint">
+  <inertial>
+    <origin xyz="0.16171274865463453 0.18879616902645693 0.08172780937635593" rpy="0 0 0"/>
+    <mass value="146.28174979450532"/>
+    <inertia ixx="4.272" iyy="5.838" izz="8.401" ixy="0.0" iyz="0.0" ixz="0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+<joint name="base_link_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="-0.40 -0.20 0" rpy="0 0 0"/>
+</joint>
+
+
+
+
+<link name="large_wheel_v2_1">
+  <inertial>
+    <origin xyz="3.2310391687162543e-07 0.0017783369711163455 4.1966922063527146e-07" rpy="0 0 0"/>
+    <mass value="22.83017869717892"/>
+    <inertia ixx="0.169008" iyy="0.324462" izz="0.169008" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.132407 -0.423796 -0.01387" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/large_wheel_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0.02 0" rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.15"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_r_1">
+  <inertial>
+    <origin xyz="-0.04143587170847873 0.01202621442648949 -0.04133983755195657" rpy="0 0 0"/>
+    <mass value="0.8990203932855944"/>
+    <inertia ixx="0.002365" iyy="0.00303" izz="0.001273" ixy="0.000201" iyz="0.000424" ixz="-0.000606"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.652407 -0.423796 -0.12387" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/left_r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  
+</link>
+
+<link name="small_wheel_v6_1">
+  <inertial>
+    <origin xyz="3.231039046314166e-07 -0.01790070710521957 4.1966921908442867e-07" rpy="0 0 0"/>
+    <mass value="8.39646643788713"/>
+    <inertia ixx="0.044493" iyy="0.086822" izz="0.044493" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.592407 -0.443796 0.01113" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/small_wheel_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.592407 -0.443796 0.01113" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/small_wheel_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="large_wheel_v2__1__1">
+  <inertial>
+    <origin xyz="3.2310391651080295e-07 -0.0017779989182015662 4.1966921804185986e-07" rpy="0 0 0"/>
+    <mass value="22.83017869717892"/>
+    <inertia ixx="0.169008" iyy="0.324462" izz="0.169008" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.132407 0.046204 -0.01387" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/large_wheel_v2__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 -0.02 0" rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.15"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right__r_1">
+  <inertial>
+    <origin xyz="-0.04143587170842278 -0.012025876373575307 -0.041339837551959094" rpy="0 0 0"/>
+    <mass value="0.8990203932855929"/>
+    <inertia ixx="0.002365" iyy="0.00303" izz="0.001273" ixy="-0.000201" iyz="-0.000424" ixz="-0.000606"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.652407 0.046204 -0.12387" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/right__r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  
+</link>
+
+<link name="small_wheel_v6__1__1">
+  <inertial>
+    <origin xyz="3.231039048534612e-07 0.017901045158135065 4.196692166176519e-07" rpy="0 0 0"/>
+    <mass value="8.39646643788713"/>
+    <inertia ixx="0.044493" iyy="0.086822" izz="0.044493" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.592407 0.066204 0.01113" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/small_wheel_v6__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.592407 0.066204 0.01113" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wheelchair_description/meshes/small_wheel_v6__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+
+
+
+
+
+
+<joint name="Rev12" type="continuous">
+  <origin xyz="0.132407 0.423796 0.01387" rpy="0 0 0"/>
+  <parent link="base_footprint"/>
+  <child link="large_wheel_v2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev13" type="revolute">
+  <origin xyz="0.652407 0.423796 0.12387" rpy="0 0 0"/>
+  <limit effort="1000.0" lower="-10" upper="10" velocity="0.5"/>
+  <parent link="base_footprint"/>
+  <child link="left_r_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rev14" type="continuous">
+  <origin xyz="-0.06 0.02 -0.135" rpy="0 0 0"/>
+  <parent link="left_r_1"/>
+  <child link="small_wheel_v6_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev15" type="continuous">
+  <origin xyz="0.132407 -0.046204 0.01387" rpy="0 0 0"/>
+  <parent link="base_footprint"/>
+  <child link="large_wheel_v2__1__1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev16" type="revolute">
+  <origin xyz="0.652407 -0.046204 0.12387" rpy="0 0 0 "/>
+  <limit effort="1000.0" lower="-10" upper="10" velocity="0.5"/>
+  <parent link="base_footprint"/>
+  <child link="right__r_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rev17" type="continuous">
+  <origin xyz="-0.06 -0.02 -0.135" rpy="0 0 0"/>
+  <parent link="right__r_1"/>
+  <child link="small_wheel_v6__1__1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+<!--IMU : joint , link , sensor  -->
+ <joint name="IMU_joint" type="fixed">
+    <axis xyz="1 0 0"/>      
+    <origin xyz="0 0 0.105"/>
+    <parent link="base_link"/>
+    <child link="IMU_link"/>
+  </joint>
+<link name="IMU_link">
+  <inertial>
+    <mass value="0.001"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <box size="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="red"/>  
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <box size=".01 .01 .01"/>
+    </geometry>
+  </collision>
+</link>
+<joint name="seat" type="fixed">
+    <axis xyz="1 0 0"/>      
+    <origin xyz="0 0 0.25"/>
+    <parent link="base_link"/>
+    <child link="seat_link"/>
+  </joint>
+
+
+
+
+
+
+</robot>

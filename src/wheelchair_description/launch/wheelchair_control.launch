@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<launch>
+<arg name="enable_ekf" default="$(optenv ENABLE_EKF true)"/>
+<group if="$(arg enable_ekf)" >
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+      <rosparam command="load" file="$(find wheelchair_description)/config/robot_localization.yaml" />
+    </node>
+      </group>
+<rosparam file="$(find wheelchair_description)/config/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"  args="   wheelchair_velocity_controller joint_state_publisher "/>
+<node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find jackal_control)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="wheelchair_velocity_controller/cmd_vel"/>
+  </node>
+
+</launch>

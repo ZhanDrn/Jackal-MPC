@@ -1,0 +1,534 @@
+<?xml version="1.0" ?>
+<robot name="wheelchair" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.696454094372746 0.122052449780401 -0.051725753491989"
+        rpy="0 0 0" />
+      <mass
+        value="447.276736142321" />
+      <inertia
+        ixx="35.1917149265521"
+        ixy="-10.8939582893512"
+        ixz="-0.253797260567729"
+        iyy="32.2814889958827"
+        iyz="0.118993550210636"
+        izz="48.0905214396372" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="BackWheel_R">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -2.77555756156289E-17 -0.0350311752530814"
+        rpy="0 0 0" />
+      <mass
+        value="6.27376052921882" />
+      <inertia
+        ixx="0.0484757628359798"
+        ixy="3.52022574666812E-34"
+        ixz="-9.47728224023892E-17"
+        iyy="0.0484757628359798"
+        iyz="-7.36260051603203E-35"
+        izz="0.091819799725367" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/BackWheel_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/BackWheel_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_BackWheel_R"
+    type="continuous">
+    <origin
+      xyz="-0.58102 0.25469 -0.21473"
+      rpy="1.5708 0 -0.0044297" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackWheel_R" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BackWheel_L">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -2.77555756156289E-17 -0.0350311752530813"
+        rpy="0 0 0" />
+      <mass
+        value="6.27376052921882" />
+      <inertia
+        ixx="0.0484757628359798"
+        ixy="3.0998164118936E-34"
+        ixz="2.36220548330279E-17"
+        iyy="0.0484757628359798"
+        iyz="-2.54106910814154E-34"
+        izz="0.0918197997253669" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/BackWheel_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/BackWheel_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_BackWheel_L"
+    type="continuous">
+    <origin
+      xyz="-0.58283 -0.15531 -0.21473"
+      rpy="1.5708 0 3.1372" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackWheel_L" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="frontSupport_R">
+    <inertial>
+      <origin
+        xyz="0.013567623407243 -0.0779084155560667 0"
+        rpy="0 0 0" />
+      <mass
+        value="2.84122714047001" />
+      <inertia
+        ixx="0.0101880367444623"
+        ixy="0.00344214877751367"
+        ixz="9.54775538145047E-18"
+        iyy="0.0054426407340849"
+        iyz="-1.55176435936988E-18"
+        izz="0.0107810781003084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontSupport_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontSupport_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_frontSupport_R"
+    type="revolute">
+    <origin
+      xyz="-1.1809 0.27985 -0.055495"
+      rpy="1.5708 0 3.1329" />
+    <parent
+      link="base_link" />
+    <child
+      link="frontSupport_R" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="frontWheel_R">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="3.41412581628871" />
+      <inertia
+        ixx="0.0148158834902696"
+        ixy="2.48922683730128E-34"
+        ixz="-3.25938278103455E-17"
+        iyy="0.0148158834902695"
+        iyz="-5.57893209289991E-20"
+        izz="0.02684356423057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontWheel_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontWheel_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_frontWheel_R"
+    type="continuous">
+    <origin
+      xyz="0.079091 -0.20365 0"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="frontSupport_R" />
+    <child
+      link="frontWheel_R" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="frontSupport_L">
+    <inertial>
+      <origin
+        xyz="0.013567623407243 -0.0779084155560667 0"
+        rpy="0 0 0" />
+      <mass
+        value="2.84122714047001" />
+      <inertia
+        ixx="0.0101880367444622"
+        ixy="0.00344214877751367"
+        ixz="5.38712954453735E-18"
+        iyy="0.0054426407340849"
+        iyz="-1.61275073157219E-18"
+        izz="0.0107810781003084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontSupport_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontSupport_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_frontSupport_L"
+    type="revolute">
+    <origin
+      xyz="-1.1829 -0.17515 -0.055495"
+      rpy="1.5708 0 3.1329" />
+    <parent
+      link="base_link" />
+    <child
+      link="frontSupport_L" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="frontWheel_L">
+    <inertial>
+      <origin
+        xyz="0 0 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="3.41412581628871" />
+      <inertia
+        ixx="0.0148158834902696"
+        ixy="9.4039548065783E-35"
+        ixz="7.9959910220806E-19"
+        iyy="0.0148158834902695"
+        iyz="-5.57893209289991E-20"
+        izz="0.02684356423057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontWheel_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontWheel_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_frontWheel_L"
+    type="continuous">
+    <origin
+      xyz="0.079091 -0.20365 0"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="frontSupport_L" />
+    <child
+      link="frontWheel_L" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="IMU">
+    <inertial>
+      <origin
+        xyz="0.0158500000000009 -0.0157570986816129 0.00309308009790898"
+        rpy="0 0 0" />
+      <mass
+        value="0.0337817410992299" />
+      <inertia
+        ixx="3.7342304557117E-06"
+        ixy="-6.54077808907933E-08"
+        ixz="2.70258577787447E-21"
+        iyy="4.25090846017801E-06"
+        iyz="-5.4131140322831E-08"
+        izz="7.51401299696129E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/IMU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/IMU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_IMU"
+    type="fixed">
+    <origin
+      xyz="-1.0852 0.067774 -0.091374"
+      rpy="3.1416 0 -1.5752" />
+    <parent
+      link="base_link" />
+    <child
+      link="IMU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="frontCam">
+    <inertial>
+      <origin
+        xyz="-0.022253711774876 -6.05706795231975E-05 0.0126258001254598"
+        rpy="0 0 0" />
+      <mass
+        value="0.0447520700225508" />
+      <inertia
+        ixx="3.94471509996994E-06"
+        ixy="-2.80540475435412E-09"
+        ixz="2.44349515256537E-07"
+        iyy="2.73620544955684E-05"
+        iyz="-1.17484237784428E-09"
+        izz="2.72774906376841E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontCam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/frontCam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_frontCam"
+    type="fixed">
+    <origin
+      xyz="-1.1353 0.27465 0.33685"
+      rpy="1.5708 0 -1.5752" />
+    <parent
+      link="base_link" />
+    <child
+      link="frontCam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="backCam">
+    <inertial>
+      <origin
+        xyz="0.0227462907968229 -6.05700329541214E-05 -0.01345960362566"
+        rpy="0 0 0" />
+      <mass
+        value="0.0447520666836655" />
+      <inertia
+        ixx="3.94471473016277E-06"
+        ixy="-2.80436690271215E-09"
+        ixz="2.44350208011941E-07"
+        iyy="2.73620501798831E-05"
+        iyz="-1.17466865256165E-09"
+        izz="2.72774861726331E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/backCam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelchair_assembly_urdf/meshes/backCam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_backCam"
+    type="fixed">
+    <origin
+      xyz="-0.016826 0.024691 0.46058"
+      rpy="1.5708 0 1.5664" />
+    <parent
+      link="base_link" />
+    <child
+      link="backCam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

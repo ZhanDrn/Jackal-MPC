@@ -1,0 +1,15 @@
+[submodule "src/catkin_simple"]
+	path = src/catkin_simple
+	url = https://github.com/catkin/catkin_simple.git
+[submodule "src/jackal_cartographer_navigation"]
+	path = src/jackal_cartographer_navigation
+	url = https://github.com/jackal/jackal_cartographer_navigation.git
+[submodule "src/jackal"]
+	path = src/jackal
+	url = https://github.com/jackal/jackal.git
+[submodule "src/jackal_simulator"]
+	path = src/jackal_simulator
+	url = https://github.com/jackal/jackal_simulator.git
+[submodule "src/jackal_desktop"]
+	path = src/jackal_desktop
+	url = https://github.com/jackal/jackal_desktop.git
